@@ -1,9 +1,12 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: "export",  // <=== enables static exports
-  distDir: 'docs',
+const isProd = process.env.NODE_ENV === 'production';
+const nextConfig = {
   reactStrictMode: true,
+  images: {
+    unoptimized: true, // Disable default image optimization
+  },
+  assetPrefix: isProd ? '/rstrobl.github.io/' : '',
+  basePath: isProd ? '/rstrobl.github.io' : '',
+  output: 'export'
 };
 
 export default nextConfig;
