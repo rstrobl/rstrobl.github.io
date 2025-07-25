@@ -1,0 +1,39 @@
+{
+  "Meta": {
+    "description": "Softwareentwicklung mit Business-Fokus"
+  },
+  "Global": {
+    "nav": {
+      "about": "About",
+      "services": "Services",
+      "clients": "Who I Work With",
+      "contact": "Get in Touch"
+    },
+    "footer": {
+      "privacy_policy": "Privacy Policy",
+      "imprint": "Imprint"
+    }
+  },
+  "About": {
+    "title": "Building Tech Ventures. From Berlin.",
+    "p1_1": "Mit über 20 Jahren Erfahrung als ",
+    "tech_entrepreneur": "Tech-Unternehmer",
+    "software_engineer": " Softwareentwickler",
+    "digital_strategist": " Digitalstratege",
+    "and": " und",
+    "p1_2": ", bringe ich umfassendes Wissen und bewährte Erkenntnisse mit, um ambitionierte digitale Unternehmen beim Skalieren, Innovieren und Wachsen zu unterstützen.",
+    "p2": "Ich habe über 50 digitale Produkte mit globalen Remote-Teams entwickelt und in Malaysia eine Entwicklungsberatung mit 30 Mitarbeitern geleitet, die ich später verkauft habe."
+  },
+  "Services": {
+    "title": "Softwareentwicklung mit Business-Fokus",
+    "p": "Als Softwareingenieur und Unternehmer verstehe ich, dass Technologieentscheidungen auch Geschäftsentscheidungen sind. Ich optimiere Entwicklungsprozesse, wähle praxisorientierte Tech-Stacks aus und stelle sicher, dass die Technik mit Skalierbarkeit und Wachstum in Einklang steht. Ob beim Aufbau eines Produkts, der Verfeinerung Ihrer technischen Strategie oder der Nutzung von KI – ich helfe dabei, komplexe Herausforderungen in effiziente, wirkungsvolle Lösungen zu verwandeln.",
+    "product_dev_title": "Produktentwicklung",
+    "product_dev_p": "",
+    "tech_audit_title": "",
+    "tech_audit_p": "",
+    "digital_strategy_title": "",
+    "digital_strategy_p": "",
+    "ai_title": "",
+    "ai_p": ""
+  }
+}

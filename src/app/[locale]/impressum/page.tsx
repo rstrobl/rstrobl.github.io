@@ -1,3 +1,5 @@
+import {routing} from '@/i18n/routing';
+
 export default function Imprint() {
   return (
     <main className="flex flex-col gap-8 sm:items-start pt-20 imprint">
@@ -50,4 +52,8 @@ export default function Imprint() {
       </p>
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({locale}));
 }

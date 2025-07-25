@@ -50,13 +50,21 @@ h3 {
   font-weight: 600;
 }
 
-p {
+p, main ul {
   font-family: Roboto;
   font-size: 20px;
   font-style: normal;
   font-weight: 350;
   line-height: 1.6;
   @apply text-grey;
+}
+
+main ul {
+  @apply flex flex-col gap-8;
+}
+
+.divider {
+  @apply border-dashed border-4 border-primary-light w-full;
 }
 
 .btn-primary {
@@ -176,6 +184,10 @@ header {
               font-style: normal;
               font-weight: 600;
               line-height: 44px; /* 137.5% */
+
+              &:hover {
+                @apply text-grey;
+              }
           }
       }
     }
@@ -229,5 +241,16 @@ input[type=text], textarea {
   }
   p {
     @apply text-center;
+  }
+}
+
+footer {
+  p {
+    a { 
+      @apply p-2;
+      &:hover {
+        @apply underline;
+      }
+    }
   }
 }

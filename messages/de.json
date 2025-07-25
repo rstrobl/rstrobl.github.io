@@ -1,0 +1,59 @@
+{
+  "Meta": {
+    "title": "Robert Strobl | Softwareentwicklung mit Business-Fokus",
+    "description": "Produktentwicklung, Tech Audits, digitale Strategien sowie KI- und Datenlösungen – maßgeschneiderte Softwarelösungen für den Erfolg Ihres Unternehmens."
+  },
+  "Global": {
+    "nav": {
+      "about": "Über mich",
+      "services": "Leistungen",
+      "clients": "Meine Kunden",
+      "contact": "Kontakt"
+    },
+    "footer": {
+      "privacy_policy": "Datenschutzrichtlinie",
+      "imprint": "Impressum"
+    }
+  },
+  "About": {
+    "title": "Gemeinsam die digitale Zukunft gestalten.",
+    "p1_1": "Mit über 20 Jahren Erfahrung als ",
+    "tech_entrepreneur": "Tech-Unternehmer",
+    "software_engineer": " Softwareentwickler",
+    "digital_strategist": " Digitalstratege",
+    "and": " und",
+    "p1_2": ", helfe ich mit meinem umfassenden Wissen ambitionierten digitalen Unternehmen beim Aufbau und Wachstum.",
+    "p2": "Ich habe über 50 digitale Produkte mit globalen Remote-Teams entwickelt und 8 Jahre lang in Malaysia eine Entwicklungsberatung mit 30 Mitarbeitern geleitet, welche 2023 aquiriert wurde.",
+    "cta": "Kontaktieren"
+  },
+  "Services": {
+    "title": "Softwareentwicklung mit den Unternehmenszielen im Blick",
+    "p": "Als Software-Ingenieur und Unternehmer verstehe ich, dass technologische Entscheidungen Geschäftsentscheidungen sind. Ich optimiere Entwicklungsprozesse, wähle praktische Tech-Stacks aus und stelle sicher, dass Ihr Entwicklungsteam auf Erfolgskurs ist.",
+    "product_dev_title": "Produktentwicklung",
+    "product_dev_p": "Vom Konzept bis zum Launch begleite ich Sie durch den gesamten Produktlebenszyklus. Ob beim Aufbau von Grund auf oder bei der Verbesserung bestehender Lösungen, ich stelle sicher, dass skalierbare, leistungsstarke und benutzerzentrierte Produkte entstehen.",
+    "tech_audit_title": "Tech Audit",
+    "tech_audit_p1": "Bewerten und optimieren Sie Ihre Software-Entwicklungsprozesse, Code-Qualität und Teamleistung.",
+    "tech_audit_p2": "Ich biete tiefgehende technische Audits und Best-Practice-Empfehlungen zur Verbesserung von Effizienz und Wartbarkeit.",
+    "digital_strategy_title": "Digitale Strategie",
+    "digital_strategy_p1": "Bringen Sie Technologie in Einklang mit den Geschäftszielen durch strukturierte Anforderungen und strategische Planung.",
+    "digital_strategy_p2": "Ich helfe dabei, klare technische Roadmaps zu definieren, um sicherzustellen, dass Ihre digitalen Initiativen gut geplant und erfolgreich umgesetzt werden.",
+    "ai_title": "KI- und Datenlösungen",
+    "ai_p": "Entwickeln und optimieren Sie KI-Modelle, die auf Ihre branchenspezifischen Bedürfnisse zugeschnitten sind. Vom domänenspezifischen maschinellen Lernen bis hin zu Datenstrategie und Implementierung – ich helfe Ihnen, KI zur Automatisierung, Entscheidungsfindung und Innovation zu nutzen."
+  },
+  "Clients": {
+    "title": "Vertrauen führender Marken",
+    "p": "Ich hatte das Privileg, mit einer Vielzahl von Kunden zusammenzuarbeiten – von Startups in der Frühphase bis hin zu etablierten Unternehmen. Hier sind einige der Marken, mit denen ich zusammengearbeitet habe."
+  },
+  "Contact": {
+    "title": "Ihr Projekt beginnt hier",
+    "p": "Egal, ob Sie ein neues Unternehmen gründen, ein bestehendes Produkt skalieren oder technische Beratung suchen, ich bin hier, um zu helfen. Lassen Sie uns verbinden und besprechen, wie wir zusammenarbeiten können, um Ihre Ziele zu erreichen.",
+    "thanks": "Danke!",
+    "thanks_p": "Ihre Nachricht wurde gesendet. Ich melde mich in Kürze bei Ihnen.",
+    "name": "Ihr Name",
+    "email": "Ihre E-Mail",
+    "message": "Ihre Nachricht",
+    "send": "Nachricht senden",
+    "or": "oder",
+    "book_appointment": "Buchen Sie eine kostenlose Beratung"
+  }
+}

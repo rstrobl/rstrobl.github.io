@@ -4,8 +4,10 @@ import { useState } from "react";
 import Image from "next/image";
 import { useEffect } from "react";
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 export default function NavBar() {
+  const t = useTranslations('Global.nav');
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -19,11 +21,11 @@ export default function NavBar() {
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   }
-  
+
   return (
     <header>
       <nav>
-        <Image src="logo.svg" alt="Robert Strobl" width={140} height={44.883} priority />
+        <Image src="/logo.svg" alt="Robert Strobl" width={140} height={44.883} priority />
 
         <button id="menu-toggle" className={`menu-toggle ` + (menuOpen ? "nav-open" : "") } onClick={() => toggleMenu()}>
           <span className="menu-toggle-bar menu-toggle-bar--top"></span>
@@ -34,24 +36,24 @@ export default function NavBar() {
       <div className={`menu ` + (menuOpen ? "open" : "")}>
         <ul>
           <li>
-            <Link href="/#home" onClick={toggleMenu}>Home</Link>
+            <Link href="#about" onClick={toggleMenu}>{t('about')}</Link>
           </li>
           <li>
-            <Link href="/#services" onClick={toggleMenu}>Services</Link>
+            <Link href="#services" onClick={toggleMenu}>{t('services')}</Link>
           </li>
           <li>
-            <Link href="/#clients" onClick={toggleMenu}>Clients</Link>
+            <Link href="#clients" onClick={toggleMenu}>{t('clients')}</Link>
           </li>
           <li>
-            <Link href="/#contact" onClick={toggleMenu}>Contact</Link>
+            <Link href="#contact" onClick={toggleMenu}>{t('contact')}</Link>
           </li>
-          {/*<li className="mt-8">
+          <li className="mt-8">
           <div className="align-middle justify-center flex flex-row items-center">
-            <Link href="/de" onClick={toggleMenu} className="p-4">DE</Link>
-            <div className="align-middle justify-center">|</div>
             <Link href="/en" onClick={toggleMenu} className="p-4">EN</Link>
-          </div> 
-          </li>*/}
+            <div className="align-middle justify-center">|</div>
+            <Link href="/de" onClick={toggleMenu} className="p-4">DE</Link>
+            </div>
+          </li>
         </ul>
       </div>
     </header>
