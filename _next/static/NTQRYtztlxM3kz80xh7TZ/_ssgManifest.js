@@ -1,0 +1,1 @@
+self.__SSG_MANIFEST=new Set(["\u002F[locale]","\u002F[locale]\u002Fcase-studies\u002Fparkling","\u002F[locale]\u002Fimpressum"]);self.__SSG_MANIFEST_CB&&self.__SSG_MANIFEST_CB()
