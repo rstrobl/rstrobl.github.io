@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Robert Strobl | Software Engineering with Business Focus</title>
+    <meta name="description" content="Software Engineering with a Business-First Mindset. Product Development, Tech Audits, Digital Strategy, and AI Solutions.">
+    <meta name="author" content="Robert Strobl">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://rstrobl.com/">
+
+    <!-- Hreflang tags for international SEO -->
+    <link rel="alternate" hreflang="en" href="https://rstrobl.com/en/">
+    <link rel="alternate" hreflang="de" href="https://rstrobl.com/de/">
+    <link rel="alternate" hreflang="x-default" href="https://rstrobl.com/en/">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Robert Strobl | Software Engineering with Business Focus">
+    <meta property="og:description" content="Software Engineering with a Business-First Mindset. Product Development, Tech Audits, Digital Strategy, and AI Solutions.">
+    <meta property="og:url" content="https://rstrobl.com/">
+    <meta property="og:site_name" content="Robert Strobl">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Robert Strobl | Software Engineering with Business Focus">
+    <meta name="twitter:description" content="Software Engineering with a Business-First Mindset. Product Development, Tech Audits, Digital Strategy, and AI Solutions.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <!-- Fallback redirect for users without JavaScript (3 second delay) -->
+    <noscript>
+        <meta http-equiv="refresh" content="0;url=/en/">
+    </noscript>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #0a0a0a;
+            color: #ededed;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+        .loader {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #333;
+            border-top-color: #ededed;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 1.5rem;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        p {
+            color: #888;
+            font-size: 0.9rem;
+        }
+        .lang-links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        .lang-links a {
+            color: #ededed;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid #333;
+            border-radius: 4px;
+            transition: border-color 0.2s;
+        }
+        .lang-links a:hover {
+            border-color: #ededed;
+        }
+    </style>
+
+    <script>
+        (function() {
+            // Get browser language preference
+            var browserLang = navigator.language || navigator.userLanguage;
+            var lang = browserLang.toLowerCase().startsWith('de') ? 'de' : 'en';
+
+            // Redirect to appropriate language version
+            window.location.replace('/' + lang + '/');
+        })();
+    </script>
+</head>
+<body>
+    <!-- Fallback content shown briefly or if JS is slow -->
+    <div class="container">
+        <div class="loader"></div>
+        <p>Redirecting...</p>
+        <div class="lang-links">
+            <a href="/en/">English</a>
+            <a href="/de/">Deutsch</a>
+        </div>
+    </div>
+</body>
+</html>
