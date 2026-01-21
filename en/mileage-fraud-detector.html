@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mileage Fraud Detector</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        .fraud-alert {
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border-left: 4px solid;
+        }
+        .fraud-alert.fraud {
+            background: #fee;
+            border-color: #dc3545;
+            color: #721c24;
+        }
+        .fraud-alert.outlier {
+            background: #fff3cd;
+            border-color: #ffc107;
+            color: #856404;
+        }
+        .fraud-alert.normal {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        .fraud-type {
+            font-weight: bold;
+        }
+        .controls {
+            margin: 20px 0;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .legend {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+        .data-table {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background: #f8f9fa;
+            font-weight: bold;
+        }
+        tr.fraud-row {
+            background: #fee;
+        }
+        tr.outlier-row {
+            background: #fff3cd;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚗 Smart Mileage Fraud Detection</h1>
+
+    <div class="container">
+        <h2>About This Algorithm</h2>
+        <p>This improved fraud detection system distinguishes between:</p>
+        <ul>
+            <li><strong>Real Fraud:</strong> Sustained mileage rollbacks (odometer tampering)</li>
+            <li><strong>Data Entry Errors:</strong> Isolated outliers where the trend continues normally after</li>
+            <li><strong>Normal Readings:</strong> Expected mileage progression</li>
+        </ul>
+        <p>The algorithm checks if the next reading continues the previous trend, which helps identify single erroneous entries.</p>
+    </div>
+
+    <div class="container">
+        <div class="controls">
+            <button onclick="loadSampleData1()">Sample 1: Real Fraud</button>
+            <button onclick="loadSampleData2()">Sample 2: Data Entry Error</button>
+            <button onclick="loadSampleData3()">Sample 3: Mixed Cases</button>
+            <button onclick="loadSampleData4()">Sample 4: Variable Intervals</button>
+            <button onclick="loadSampleData5()">Sample 5: High Frequency Usage</button>
+            <button onclick="loadSampleData6()">Sample 6: Irregular Readings</button>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: #28a745;"></div>
+                <span>Normal Reading</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #ffc107;"></div>
+                <span>Outlier (Data Error)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: #dc3545;"></div>
+                <span>Suspected Fraud</span>
+            </div>
+        </div>
+
+        <div class="chart-container">
+            <canvas id="mileageChart"></canvas>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Alerts</h2>
+        <div id="alertsContainer"></div>
+    </div>
+
+    <div class="container">
+        <h2>Data Table</h2>
+        <div class="data-table">
+            <table id="dataTable">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Date</th>
+                        <th>Mileage (km)</th>
+                        <th>Change</th>
+                        <th>Status</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let chartInstance = null;
+
+        // Improved fraud detection algorithm with time-awareness
+        function detectFraud(data) {
+            const results = [];
+            const FRAUD_THRESHOLD = -100; // km absolute drop
+            const RATE_TOLERANCE = 0.5; // 50% tolerance for rate consistency
+
+            // Helper function to calculate days between dates
+            function getDaysDiff(date1, date2) {
+                const d1 = new Date(date1);
+                const d2 = new Date(date2);
+                return Math.abs((d2 - d1) / (1000 * 60 * 60 * 24));
+            }
+
+            // Helper function to calculate km/day rate
+            function getRate(mileageDiff, daysDiff) {
+                return daysDiff > 0 ? mileageDiff / daysDiff : 0;
+            }
+
+            for (let i = 0; i < data.length; i++) {
+                const current = data[i];
+                let status = 'Normal';
+                let notes = '';
+                let isFraud = false;
+                let isOutlier = false;
+
+                if (i > 0) {
+                    const previous = data[i - 1];
+                    const mileageDiff = current.mileage - previous.mileage;
+                    const daysDiff = getDaysDiff(previous.date, current.date);
+                    const currentRate = getRate(mileageDiff, daysDiff);
+
+                    // Check for negative change exceeding threshold
+                    if (mileageDiff < FRAUD_THRESHOLD) {
+                        // Check if this might be an isolated outlier
+                        if (i < data.length - 1) {
+                            const next = data[i + 1];
+
+                            // Calculate rates to compare trends properly
+                            const daysToNext = getDaysDiff(current.date, next.date);
+                            const daysPrevToNext = getDaysDiff(previous.date, next.date);
+
+                            const nextFromCurrentRate = getRate(next.mileage - current.mileage, daysToNext);
+                            const nextFromPreviousRate = getRate(next.mileage - previous.mileage, daysPrevToNext);
+
+                            // Calculate expected rate from historical data
+                            let expectedRate = 50; // default ~50 km/day
+                            if (i >= 2) {
+                                let totalMileage = 0;
+                                let totalDays = 0;
+                                for (let j = 1; j < i; j++) {
+                                    totalMileage += data[j].mileage - data[j - 1].mileage;
+                                    totalDays += getDaysDiff(data[j - 1].date, data[j].date);
+                                }
+                                expectedRate = totalDays > 0 ? totalMileage / totalDays : 50;
+                            }
+
+                            // Key insight: if the rate from previous to next is reasonable,
+                            // and the jump from current to next is large, current is likely wrong
+                            const nextContinuesTrend = nextFromPreviousRate > 0 &&
+                                                       nextFromPreviousRate >= expectedRate * RATE_TOLERANCE &&
+                                                       nextFromPreviousRate <= expectedRate * 2;
+
+                            // Check if there's a large recovery jump (indicating current was anomaly)
+                            // Use absolute mileage difference when comparing, not rates
+                            const absoluteJump = next.mileage - current.mileage;
+                            const absoluteDrop = Math.abs(mileageDiff);
+                            const isLargeRecovery = absoluteJump > absoluteDrop * 1.2;
+
+                            // Additional check: if next is higher than previous (positive progression),
+                            // this suggests current is an outlier regardless of historical trend
+                            const nextHigherThanPrevious = next.mileage > previous.mileage;
+                            const isSignificantRecovery = absoluteJump > absoluteDrop * 3;
+
+                            if ((nextContinuesTrend && isLargeRecovery) ||
+                                (nextHigherThanPrevious && isSignificantRecovery)) {
+                                status = 'Outlier';
+                                isOutlier = true;
+                                notes = `Likely data entry error: ${current.mileage} km (drop of ${Math.abs(mileageDiff)} km from ${previous.mileage} km, but rate from ${previous.mileage}→${next.mileage} is ${nextFromPreviousRate.toFixed(1)} km/day, consistent with expected ${expectedRate.toFixed(1)} km/day)`;
+                            } else {
+                                status = 'Suspected Fraud';
+                                isFraud = true;
+                                notes = `Mileage rollback: ${Math.abs(mileageDiff)} km decrease (${currentRate.toFixed(1)} km/day) from ${previous.mileage} km. Pattern suggests tampering.`;
+                            }
+                        } else {
+                            // Last reading - can't check if trend continues
+                            status = 'Suspected Fraud';
+                            isFraud = true;
+                            notes = `Mileage rollback: ${Math.abs(mileageDiff)} km decrease (${currentRate.toFixed(1)} km/day from ${previous.mileage} km). Last reading - cannot verify trend.`;
+                        }
+                    } else if (mileageDiff < 0) {
+                        // Small negative change (less than threshold)
+                        notes = `Minor decrease: ${Math.abs(mileageDiff)} km (${currentRate.toFixed(1)} km/day, within tolerance)`;
+                    } else if (mileageDiff === 0) {
+                        notes = 'No change in mileage';
+                    } else {
+                        notes = `Normal increase: ${mileageDiff} km (${currentRate.toFixed(1)} km/day over ${Math.round(daysDiff)} days)`;
+                    }
+                }
+
+                results.push({
+                    ...current,
+                    status,
+                    notes,
+                    index: i,
+                    isFraud,
+                    isOutlier
+                });
+            }
+
+            return results;
+        }
+
+        function createMileageChart(data) {
+            const canvas = document.getElementById('mileageChart');
+            const ctx = canvas.getContext('2d');
+
+            if (chartInstance) {
+                chartInstance.destroy();
+            }
+
+            const chartData = data.map((item) => ({
+                x: new Date(item.date),
+                y: item.mileage,
+                status: item.status,
+                notes: item.notes,
+            }));
+
+            chartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    datasets: [{
+                        label: 'Mileage',
+                        data: chartData,
+                        borderColor: '#007bff',
+                        backgroundColor: 'rgba(0, 123, 255, 0.1)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: chartData.map((point) => {
+                            if (point.status === 'Suspected Fraud') return '#dc3545';
+                            if (point.status === 'Outlier') return '#ffc107';
+                            return '#28a745';
+                        }),
+                        pointBorderColor: chartData.map((point) => {
+                            if (point.status === 'Suspected Fraud') return '#dc3545';
+                            if (point.status === 'Outlier') return '#ffc107';
+                            return '#28a745';
+                        }),
+                        pointBorderWidth: 3,
+                        pointRadius: 8,
+                        pointHoverRadius: 10,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        intersect: false,
+                        mode: 'index',
+                    },
+                    plugins: {
+                        legend: {
+                            display: false,
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const point = context.raw;
+                                    return [
+                                        `Mileage: ${point.y.toLocaleString()} km`,
+                                        `Status: ${point.status}`,
+                                        point.notes
+                                    ];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            type: 'time',
+                            time: {
+                                unit: 'month',
+                                displayFormats: {
+                                    month: 'MMM yyyy',
+                                },
+                                tooltipFormat: 'MMM dd, yyyy',
+                            },
+                            title: {
+                                display: true,
+                                text: 'Date',
+                                font: { size: 14, weight: 'bold' },
+                            },
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)',
+                            },
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: 'Mileage (km)',
+                                font: { size: 14, weight: 'bold' },
+                            },
+                            grid: {
+                                color: 'rgba(0,0,0,0.1)',
+                            },
+                            ticks: {
+                                callback: function(value) {
+                                    return value.toLocaleString() + ' km';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function displayAlerts(data) {
+            const container = document.getElementById('alertsContainer');
+            const alerts = data.filter(d => d.status !== 'Normal');
+
+            if (alerts.length === 0) {
+                container.innerHTML = '<div class="fraud-alert normal">✅ No suspicious activity detected</div>';
+                return;
+            }
+
+            container.innerHTML = alerts.map(alert => {
+                const alertClass = alert.isFraud ? 'fraud' : (alert.isOutlier ? 'outlier' : 'normal');
+                const icon = alert.isFraud ? '🚨' : '⚠️';
+                return `
+                    <div class="fraud-alert ${alertClass}">
+                        ${icon} <span class="fraud-type">${alert.status}</span> - ${new Date(alert.date).toLocaleDateString()} (${alert.mileage.toLocaleString()} km)<br>
+                        <small>${alert.notes}</small>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function displayTable(data) {
+            const tbody = document.querySelector('#dataTable tbody');
+            tbody.innerHTML = data.map((item, idx) => {
+                const rowClass = item.isFraud ? 'fraud-row' : (item.isOutlier ? 'outlier-row' : '');
+                const change = idx > 0 ? (item.mileage - data[idx - 1].mileage).toLocaleString() : '-';
+                const changeSymbol = idx > 0 && item.mileage - data[idx - 1].mileage > 0 ? '+' : '';
+
+                return `
+                    <tr class="${rowClass}">
+                        <td>${idx + 1}</td>
+                        <td>${new Date(item.date).toLocaleDateString()}</td>
+                        <td>${item.mileage.toLocaleString()}</td>
+                        <td>${idx > 0 ? changeSymbol + change : '-'}</td>
+                        <td>${item.status}</td>
+                        <td>${item.notes}</td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        function processData(rawData) {
+            const detectedData = detectFraud(rawData);
+            createMileageChart(detectedData);
+            displayAlerts(detectedData);
+            displayTable(detectedData);
+        }
+
+        // Sample Data Sets
+
+        // Sample 1: Real fraud - sustained rollback
+        function loadSampleData1() {
+            const data = [
+                { date: '2023-01-15', mileage: 50000 },
+                { date: '2023-03-20', mileage: 55000 },
+                { date: '2023-05-10', mileage: 60000 },
+                { date: '2023-07-05', mileage: 65000 },
+                { date: '2023-09-01', mileage: 45000 }, // Fraud: rolled back
+                { date: '2023-11-15', mileage: 47000 }, // Continues from rolled back value
+                { date: '2024-01-20', mileage: 50000 },
+            ];
+            processData(data);
+        }
+
+        // Sample 2: Data entry error - single outlier
+        function loadSampleData2() {
+            const data = [
+                { date: '2023-01-15', mileage: 50000 },
+                { date: '2023-03-20', mileage: 55000 },
+                { date: '2023-05-10', mileage: 60000 },
+                { date: '2023-07-05', mileage: 54000 }, // Typo: should be 64000
+                { date: '2023-09-01', mileage: 68000 }, // Continues normal trend
+                { date: '2023-11-15', mileage: 73000 },
+                { date: '2024-01-20', mileage: 78000 },
+            ];
+            processData(data);
+        }
+
+        // Sample 3: Mixed cases
+        function loadSampleData3() {
+            const data = [
+                { date: '2023-01-15', mileage: 50000 },
+                { date: '2023-02-20', mileage: 52000 },
+                { date: '2023-03-25', mileage: 51500 }, // Minor typo
+                { date: '2023-04-30', mileage: 56000 }, // Recovers
+                { date: '2023-06-10', mileage: 60000 },
+                { date: '2023-07-15', mileage: 45000 }, // Fraud attempt
+                { date: '2023-08-20', mileage: 46500 }, // Continues from fraud
+                { date: '2023-09-25', mileage: 48000 },
+                { date: '2023-10-30', mileage: 47000 }, // Another outlier
+                { date: '2023-12-05', mileage: 52000 }, // Recovers
+                { date: '2024-01-10', mileage: 56000 },
+            ];
+            processData(data);
+        }
+
+        // Sample 4: Variable time intervals (weekly to quarterly)
+        function loadSampleData4() {
+            const data = [
+                { date: '2023-01-05', mileage: 45000 },
+                { date: '2023-01-12', mileage: 45800 },  // 1 week: ~800 km
+                { date: '2023-01-19', mileage: 46500 },  // 1 week: ~700 km
+                { date: '2023-02-15', mileage: 49500 },  // 4 weeks: ~3000 km (similar rate)
+                { date: '2023-02-22', mileage: 48000 },  // Typo! Should be ~50200
+                { date: '2023-05-20', mileage: 59000 },  // 3 months: continues trend from 49500
+                { date: '2023-08-30', mileage: 68000 },  // 3+ months: normal continuation
+                { date: '2023-12-15', mileage: 78000 },  // 3.5 months: normal continuation
+            ];
+            processData(data);
+        }
+
+        // Sample 5: High frequency usage with tight intervals
+        function loadSampleData5() {
+            const data = [
+                { date: '2023-01-02', mileage: 120000 },
+                { date: '2023-01-16', mileage: 123500 }, // 2 weeks: 3500 km (delivery driver)
+                { date: '2023-02-01', mileage: 127000 }, // 2 weeks: 3500 km
+                { date: '2023-02-14', mileage: 129800 }, // 2 weeks: 2800 km
+                { date: '2023-03-01', mileage: 119000 }, // Typo! Should be 133000
+                { date: '2023-03-15', mileage: 136500 }, // 2 weeks: continues from 129800
+                { date: '2023-04-01', mileage: 140000 }, // 2+ weeks: normal
+                { date: '2023-04-30', mileage: 146000 }, // 4 weeks: normal high usage
+            ];
+            processData(data);
+        }
+
+        // Sample 6: Irregular readings with long gaps
+        function loadSampleData6() {
+            const data = [
+                { date: '2023-01-10', mileage: 80000 },
+                { date: '2023-01-25', mileage: 81200 },  // 2 weeks
+                { date: '2023-05-10', mileage: 89000 },  // 3.5 months gap
+                { date: '2023-05-15', mileage: 78000 },  // Suspicious! -11000 km in 5 days
+                { date: '2023-09-20', mileage: 98000 },  // 4 months: continues from 89000 (not 78000) = outlier
+                { date: '2023-10-05', mileage: 88000 },  // Fraud! -10000 km
+                { date: '2024-01-15', mileage: 92000 },  // 3 months: continues from fraud point
+            ];
+            processData(data);
+        }
+
+        // Load first sample on page load
+        loadSampleData1();
+    </script>
+</body>
+</html>
