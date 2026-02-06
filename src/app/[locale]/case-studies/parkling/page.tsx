@@ -1,41 +1,50 @@
 import {routing} from '@/i18n/routing';
 
-export default function Parkling() {
+export default async function Parkling({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  
   return (
     <main className="flex flex-col gap-8 sm:items-start pt-20 imprint">
+      <a href={`/${locale}/#about`} className="text-primary hover:underline">← Back</a>
+      
       <h1>Parkling</h1>
+      <p className="text-xl text-grey">Founding Engineer · 2016–2017 · Acquired by BMW/Daimler → EasyPark</p>
 
-      <h3>Background</h3>
+      <h3>The Problem</h3>
       <p>
-        Parkling is a B2B provider of on-street parking data, originally founded as a venture of Centerbridge, majority shareholder of APCOA, Europe&apos;s largest parking infrastructure operator. The company aims collects on-street data in order to predict parking situations in cities.
+        Urban drivers spend an average of 20 minutes searching for parking — creating traffic, pollution, and frustration. Centerbridge (majority owner of APCOA, Europe&apos;s largest parking operator) wanted to solve this with real-time parking prediction.
       </p>
 
-      <h3>My Role</h3>
+      <h3>What I Built</h3>
       <p>
-        As a Founding Engineer, I was responsible for:
+        As Founding Engineer, I designed and built Parkling&apos;s technical foundation from scratch:
       </p>
       <ul>
-        <li><b>Algorithm Engineering:</b> Developing key algorithms for real-time parking data.</li>
-        <li><b>Building MVP Backend:</b> Designing the backend infrastructure for Parkling&apos;s MVP.</li>
-        <li><b>Team Building:</b> Leading recruitment for key roles, including CTO, engineers, data scientists, and mobile developers, setting the foundation for the company&apos;s growth.</li>
+        <li><b>Prediction algorithms</b> — Core ML models to forecast parking availability using historical patterns, events, and real-time data</li>
+        <li><b>Scalable backend</b> — Ruby on Rails API handling millions of data points from sensors and mobile apps</li>
+        <li><b>Mobile apps</b> — React Native apps for both data collection (drivers) and B2B clients</li>
+        <li><b>Hired the team</b> — Recruited the CTO, data scientists, and engineering team that scaled the company</li>
       </ul>
 
-
-      <h3>Key Achievements</h3>
+      <h3>The Outcome</h3>
+      <p>
+        Parkling became the leading on-street parking data provider in Europe. The technology I built enabled:
+      </p>
       <ul>
-        <li>Developed core algorithms and backend systems, enabling Parkling to provide valuable data.</li>
-        <li>Built a strong technical team that contributed to Parkling&apos;s market success.</li>
+        <li>Partnerships with major cities to reduce parking search traffic</li>
+        <li>Integration into navigation systems used by millions</li>
+        <li><b>Acquisition by PARK NOW</b> (BMW Group / Daimler Mobility joint venture)</li>
+        <li>Subsequent acquisition by <b>EasyPark Group</b>, now operating in 1,300+ cities worldwide</li>
       </ul>
 
-      <h3>Acquisition</h3>
-      <p>
-        Parkling was acquired by <b>PARK NOW</b>, a joint venture of <b>BMW Group</b> and <b>Daimler Mobility AG</b>. In 2021, PARK NOW was acquired by <b>EasyPark</b>, solidifying Parkling&apos;s position in the global parking data space.
+      <h3>Tech Stack</h3>
+      <p className="text-grey">
+        Ruby · Rails · React Native · React.js · Python · Java · Graphhopper · PostgreSQL · AWS
       </p>
 
-      <h3>Conclusion</h3>
-      <p>
-        My role at Parkling played a key part in establishing a company that became a leader in on-street parking data, ultimately leading to successful acquisitions and global expansion.
-      </p>
+      <div className="mt-8">
+        <a href={`/${locale}/#contact`} className="btn-primary">Work with me →</a>
+      </div>
     </main>
   );
 }

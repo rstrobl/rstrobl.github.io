@@ -1,59 +1,116 @@
 {
   "Meta": {
-    "title": "Robert Strobl | Ihr technischer Mitgründer. Auf Abruf.",
-    "description": "Fractional CTO und technischer Partner für erfahrene Gründer, die B2B SaaS aufbauen"
+    "title": "Robert Strobl | Dein technischer Co-Founder. On Demand.",
+    "description": "Fractional CTO und technischer Partner für erfahrene Gründer im B2B SaaS"
   },
   "Global": {
     "nav": {
       "about": "Über mich",
-      "services": "Arbeitsweise",
-      "clients": "Für wen ich arbeite",
+      "services": "Was ich mache",
+      "work": "Projekte",
+      "clients": "Für wen",
       "contact": "Kontakt"
     },
     "footer": {
-      "privacy_policy": "Datenschutzrichtlinie",
+      "privacy_policy": "Datenschutz",
       "imprint": "Impressum"
     }
   },
   "About": {
-    "title": "Ihr technischer Mitgründer. Auf Abruf.",
-    "p1_1": "Sie haben bereits Unternehmen aufgebaut. Oder Teams in großem Maßstab geleitet. Jetzt starten Sie etwas Eigenes — und brauchen einen ",
+    "title": "Dein technischer Co-Founder. On Demand.",
+    "p1_1": "Du hast schon Unternehmen gebaut. Du brauchst kein Händchenhalten. Du brauchst einen ",
     "tech_entrepreneur": "technischen Partner",
-    "software_engineer": "",
-    "digital_strategist": "",
-    "and": "",
-    "p1_2": ", der auf Ihrem Niveau arbeitet.",
-    "p2": "Ich helfe erfahrenen Gründern, B2B SaaS-Produkte zu entwickeln, die von Anfang an richtig aufgebaut sind. Kein Händchenhalten. Keine verschwendeten Ressourcen. Nur Senior-Level Umsetzung.",
-    "cta": "Kontaktieren"
+    "p1_2": ", der mithalten kann.",
+    "p2": "20 Jahre Produktentwicklung, Engineering-Teams und Unternehmensgründungen. Zwei Exits. Eins läuft noch. Jetzt helfe ich erfahrenen Gründern, ihr technisches Fundament richtig zu bauen — damit sie schnell vorankommen, ohne in 18 Monaten alles neu bauen zu müssen.",
+    "cred1": "2 Exits",
+    "cred2": "20+ Jahre Erfahrung",
+    "cred3": "Ex-Agentur-Gründer (30 Leute)",
+    "cta": "Lass uns reden"
   },
   "Services": {
     "title": "20+ Jahre Bauen, Liefern und Skalieren",
-    "p": "Ich habe Unternehmen gegründet, Engineering-Teams geleitet und Produkte in verschiedenen Branchen entwickelt. Ich habe in Malaysia eine 30-köpfige Entwicklungsberatung aufgebaut — 2023 akquiriert. Ich verstehe, dass Architekturentscheidungen Geschäftsentscheidungen sind, und dass Geschwindigkeit zählt — aber auch, dass man nicht alles in 18 Monaten neu aufbauen muss.",
-    "product_dev_title": "Produktarchitektur",
-    "product_dev_p": "Sie haben die Idee validiert. Jetzt müssen Sie richtig bauen. Ich entwerfe das technische Fundament — Stack, Infrastruktur, Teamstruktur — damit es mit Ihnen skaliert, nicht gegen Sie.",
-    "tech_audit_title": "Technische Due Diligence",
-    "tech_audit_p1": "Sie planen eine Finanzierungsrunde? Oder eine Akquisition? Ich liefere ehrliche, investorenreife technische Bewertungen.",
-    "tech_audit_p2": "Kein Blabla. Nur was funktioniert, was nicht, und was es braucht, um es zu beheben.",
-    "digital_strategy_title": "Hands-On Entwicklung",
+    "p": "Ich war auf beiden Seiten — als Gründer, der Hilfe brauchte, und als derjenige, den Gründer anrufen, wenn es funktionieren muss. Architektur, Teamaufbau, technische Strategie. Die Dinge, die ohne Erfahrung schwer richtig zu machen sind.",
+    "product_dev_title": "Produkt-Architektur",
+    "product_dev_p": "Du hast die Idee validiert. Jetzt musst du sie richtig bauen. Ich designe das technische Fundament — Stack, Infrastruktur, Teamstruktur — damit es mit dir skaliert, nicht gegen dich.",
+    "tech_audit_title": "Technical Due Diligence",
+    "tech_audit_p1": "Fundraising? Akquisition? Ich liefere ehrliche, investorentaugliche technische Bewertungen.",
+    "tech_audit_p2": "Kein Blabla. Nur was funktioniert, was nicht, und was es kostet zu fixen.",
+    "digital_strategy_title": "Hands-On Development",
     "digital_strategy_p1": "Manchmal braucht man einfach jemanden, der bauen kann.",
-    "digital_strategy_p2": "Ich gehe in die Tiefe, wenn nötig — Backend-Systeme, Integrationen, Infrastruktur — besonders in frühen Phasen, wo jede Entscheidung sich potenziert.",
+    "digital_strategy_p2": "Ich gehe tief rein wenn nötig — Backend-Systeme, Integrationen, Infrastruktur — besonders in frühen Phasen, wo jede Entscheidung sich multipliziert.",
     "ai_title": "Fractional CTO",
-    "ai_p": "Sie brauchen technische Führung ohne Vollzeit-Anstellung? Ich integriere mich in Ihr Team, gebe die Richtung vor, löse Blockaden für Entwickler und halte das Produkt in Bewegung."
+    "ai_p": "Technische Führung ohne Vollzeit-Hire? Ich arbeite mit deinem Team, gebe die Richtung vor, löse Blocker und halte das Produkt am Laufen."
+  },
+  "Process": {
+    "title": "Wie ich arbeite",
+    "subtitle": "Keine 47-seitigen Proposals. Keine endlosen Discovery-Phasen. So sieht Zusammenarbeit aus:",
+    "step1": {
+      "label": "Woche 1",
+      "title": "Wir reden",
+      "desc": "30 Minuten Call. Du erzählst mir, was du baust und wo du feststeckst. Ich sage dir ehrlich, ob ich helfen kann. Kein Pitch-Deck nötig."
+    },
+    "step2": {
+      "label": "Woche 2",
+      "title": "Ich schaue rein",
+      "desc": "Wenn wir passen, nehme ich mir Zeit, deine Codebase, dein Team und deine Constraints zu verstehen. Ich komme mit einer klaren Einschätzung und Empfehlungen zurück."
+    },
+    "step3": {
+      "label": "Laufend",
+      "title": "Wir bauen",
+      "desc": "Je nachdem was du brauchst: Ich designe deine Architektur, führe dein Team, schreibe Code, oder alles zusammen. Flexibles Engagement — hoch- oder runterskalieren nach Bedarf."
+    },
+    "step4": {
+      "label": "Immer",
+      "title": "Ich bleibe erreichbar",
+      "desc": "Auch nach dem Hauptengagement bin ich eine Slack-Nachricht entfernt. Die besten technischen Partner sind die, die dranbleiben."
+    }
+  },
+  "FeaturedWork": {
+    "title": "Ausgewählte Projekte",
+    "subtitle": "Ein paar Highlights aus 20+ Jahren Produkt- und Unternehmensaufbau.",
+    "availability": "Verfügbar für neue Projekte"
+  },
+  "Testimonials": {
+    "title": "Was Gründer sagen",
+    "subtitle": "Ich habe mit erfahrenen Unternehmern gearbeitet, die den Unterschied zwischen guter technischer Beratung und heißer Luft kennen.",
+    "detlev": {
+      "quote": "Robert war das technische Rückgrat von Parkling. Während ich mich auf die Business-Seite konzentriert habe, hat er die gesamte Datenplattform von Grund auf gebaut. Als BMW und Daimler anklopften, war die Technologie nicht nur bereit — sie war genau das, was sie brauchten. Das ist selten.",
+      "role": "Ex-McKinsey · Ehemaliger CEO, Parkling",
+      "context": "Jetzt Berater bei Cardentity"
+    },
+    "bjarte": {
+      "quote": "Wir haben Suria Labs zusammen von null auf 30 Leute aufgebaut. Robert hat acht Jahre lang jede technische Entscheidung geleitet. Als Shortcut uns übernommen hat, lief die Tech Due Diligence reibungslos — das ist ein direktes Ergebnis davon, wie Robert alles architektoniert hat. Ich würde sofort wieder mit ihm bauen.",
+      "role": "Ehemaliger CEO, Suria Labs",
+      "context": "Co-Founder bis zur Akquisition"
+    }
   },
   "Clients": {
     "title": "Für wen ich arbeite",
-    "p": "Ich arbeite am besten mit Gründern in ihrer zweiten (oder dritten) Unternehmung, Führungskräften, die aus dem Corporate-Bereich kommen und etwas Eigenes aufbauen wollen, und kleinen Teams, die über ihre initiale Architektur hinausgewachsen sind. Nicht passend: Erstgründer, die Mentoring in Startup-Basics brauchen."
+    "persona1": {
+      "title": "Serial Founders",
+      "desc": "Beim zweiten oder dritten Venture. Du hast das schon gemacht und weißt, wie gut aussieht."
+    },
+    "persona2": {
+      "title": "Corporate Aussteiger",
+      "desc": "Großkonzern verlassen, um was Eigenes zu bauen. Du weißt wie man operiert, jetzt musst du bauen."
+    },
+    "persona3": {
+      "title": "Wachsende Teams",
+      "desc": "Über MVP hinaus. Deine frühe Architektur zeigt Risse und du brauchst jemanden, der schon skaliert hat."
+    },
+    "not_for": "Nicht passend?",
+    "not_for_desc": "Ich mache keine Agenturen, RFPs oder Projekte, bei denen ich als Dienstleister behandelt werde. Ich arbeite als Partner oder gar nicht."
   },
   "Contact": {
-    "title": "Lassen Sie uns sprechen",
-    "p": "Ich übernehme nur wenige Engagements gleichzeitig. Wenn Sie etwas Ambitioniertes aufbauen und einen technischen Partner suchen, der das alles schon durchgemacht hat, lassen Sie uns reden.",
+    "title": "Lass uns reden",
+    "p": "Ich nehme nur wenige Engagements gleichzeitig an. Wenn du etwas Ambitioniertes baust und einen technischen Partner willst, der das schon durchgemacht hat, lass uns sprechen.",
     "thanks": "Danke!",
-    "thanks_p": "Ihre Nachricht wurde gesendet. Ich melde mich in Kürze bei Ihnen.",
-    "name": "Ihr Name",
-    "email": "Ihre E-Mail",
-    "message": "Ihre Nachricht",
+    "thanks_p": "Deine Nachricht wurde gesendet. Ich melde mich bald.",
+    "name": "Dein Name",
+    "email": "Deine Email",
+    "message": "Deine Nachricht",
     "send": "Nachricht senden",
     "or": "oder",
-    "book_appointment": "Kostenloses Erstgespräch buchen"
+    "book_appointment": "Kostenloses Gespräch buchen"
   }
 }

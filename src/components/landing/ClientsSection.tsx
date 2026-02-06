@@ -1,22 +1,44 @@
-import Image from "next/image";
 import { useTranslations } from 'next-intl';
 
 export default function ClientsSection() {
   const t = useTranslations('Clients');
 
   return (
-    <section id="clients" className="items-center">
-      <h2>{t('title')}</h2>
-      <p className="text-center">{t('p')}</p>
-      <div className="flex justify-center items-center content-center gap-8 flex-shrink-0 flex-wrap">
-        <Image src="/brands/heineken.svg" alt="Heineken" width={197} height={48} />
-        <Image src="/brands/salesforce.svg" alt="Salesforce" width={105} height={73} />
-        <Image src="/brands/airasia.svg" alt="Air Asia" width={90} height={90} />
-        <Image src="/brands/heroku.svg" alt="Heroku" width={171} height={48} />
-        <Image src="/brands/rhb.svg" alt="RHB" width={128} height={41} />
-        <Image src="/brands/snoopdogg.svg" alt="Snoop Dogg" width={172} height={48} />
-        <Image src="/brands/fave.svg" alt="Fave" width={100} height={63} />
-        <Image src="/brands/easypark.svg" alt="EasyPark" width={200} height={50} />
+    <section id="clients" className="w-full">
+      <h2 className="text-center">{t('title')}</h2>
+      
+      <div className="max-w-3xl mx-auto mt-8">
+        <div className="grid gap-6 md:grid-cols-3">
+          {/* Persona 1 */}
+          <div className="text-center p-6">
+            <div className="text-4xl mb-4">🚀</div>
+            <h3 className="text-lg font-medium mb-2">{t('persona1.title')}</h3>
+            <p className="text-grey text-sm">{t('persona1.desc')}</p>
+          </div>
+          
+          {/* Persona 2 */}
+          <div className="text-center p-6">
+            <div className="text-4xl mb-4">🏢</div>
+            <h3 className="text-lg font-medium mb-2">{t('persona2.title')}</h3>
+            <p className="text-grey text-sm">{t('persona2.desc')}</p>
+          </div>
+          
+          {/* Persona 3 */}
+          <div className="text-center p-6">
+            <div className="text-4xl mb-4">📈</div>
+            <h3 className="text-lg font-medium mb-2">{t('persona3.title')}</h3>
+            <p className="text-grey text-sm">{t('persona3.desc')}</p>
+          </div>
+        </div>
+        
+        <div className="mt-12 p-8 bg-primary-light rounded-lg">
+          <p className="text-center text-black text-lg font-medium mb-2">
+            {t('not_for')}
+          </p>
+          <p className="text-center text-grey text-base">
+            {t('not_for_desc')}
+          </p>
+        </div>
       </div>
     </section>
   );

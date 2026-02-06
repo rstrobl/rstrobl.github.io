@@ -6,8 +6,9 @@
   "Global": {
     "nav": {
       "about": "About",
-      "services": "How I Work",
-      "clients": "Who I Work With",
+      "services": "What I Do",
+      "work": "Work",
+      "clients": "Who I Help",
       "contact": "Let's Talk"
     },
     "footer": {
@@ -17,18 +18,18 @@
   },
   "About": {
     "title": "Your Technical Co-Founder. On Demand.",
-    "p1_1": "You've built companies before. Or led teams at scale. Now you're starting something of your own — and you need a ",
+    "p1_1": "You've built companies before. You don't need hand-holding. You need a ",
     "tech_entrepreneur": "technical partner",
-    "software_engineer": "",
-    "digital_strategist": "",
-    "and": "",
-    "p1_2": " who operates at your level.",
-    "p2": "I help experienced founders build B2B SaaS products that are architected right from day one. No hand-holding. No wasted cycles. Just senior-level execution.",
+    "p1_2": " who can keep up.",
+    "p2": "I've spent 20 years building products, leading engineering teams, and founding companies. Two exits. One still going. Now I help experienced founders get their technical foundation right — so they can move fast without the regret of rebuilding everything in 18 months.",
+    "cred1": "2 exits",
+    "cred2": "20+ years building",
+    "cred3": "Former agency founder (30 people)",
     "cta": "Let's Talk"
   },
   "Services": {
     "title": "20+ Years Building, Shipping, and Scaling",
-    "p": "I've founded companies, led engineering teams, and built products across industries. I founded and grew a 30-person development consultancy in Malaysia — acquired in 2023. I understand that architecture decisions are business decisions, and that speed matters — but so does not having to rebuild everything in 18 months.",
+    "p": "I've been on both sides — as a founder who needed help, and as the person founders call when things need to work. Architecture, team building, technical strategy. The stuff that's hard to get right without experience.",
     "product_dev_title": "Product Architecture",
     "product_dev_p": "You've validated the idea. Now you need to build it properly. I design the technical foundation — stack, infrastructure, team structure — so it scales with you, not against you.",
     "tech_audit_title": "Technical Due Diligence",
@@ -40,9 +41,65 @@
     "ai_title": "Fractional CTO",
     "ai_p": "Need ongoing technical leadership without a full-time hire? I embed with your team, set direction, unblock engineers, and keep the product moving."
   },
+  "Process": {
+    "title": "How I Work",
+    "subtitle": "No 47-page proposals. No endless discovery phases. Here's what working together looks like:",
+    "step1": {
+      "label": "Week 1",
+      "title": "We talk",
+      "desc": "30-minute call. You tell me what you're building and where you're stuck. I tell you honestly if I can help. No pitch decks required."
+    },
+    "step2": {
+      "label": "Week 2",
+      "title": "I dig in",
+      "desc": "If we're a fit, I spend time understanding your codebase, team, and constraints. I come back with a clear assessment and recommendations."
+    },
+    "step3": {
+      "label": "Ongoing",
+      "title": "We build",
+      "desc": "Depending on what you need: I might design your architecture, lead your team, write code, or do all three. Flexible engagement — scale up or down as needed."
+    },
+    "step4": {
+      "label": "Always",
+      "title": "I stay available",
+      "desc": "Even after the main engagement, I'm a Slack message away. The best technical partners are the ones who stick around."
+    }
+  },
+  "FeaturedWork": {
+    "title": "Selected Work",
+    "subtitle": "A few highlights from 20+ years of building products and companies.",
+    "availability": "Available for new projects"
+  },
+  "Testimonials": {
+    "title": "What Founders Say",
+    "subtitle": "I've worked with experienced operators who know the difference between good technical advice and hand-waving.",
+    "detlev": {
+      "quote": "Robert was the technical backbone of Parkling. While I focused on the business side, he built the entire data platform from scratch. When BMW and Daimler came knocking, the technology wasn't just ready — it was exactly what they needed. That's rare.",
+      "role": "Ex-McKinsey · Former CEO, Parkling",
+      "context": "Now advising at Cardentity"
+    },
+    "bjarte": {
+      "quote": "We built Suria Labs together from zero to 30 people. Robert led every technical decision for eight years. When Shortcut acquired us, the tech due diligence was smooth — that's a direct result of how Robert architected everything. I'd build with him again in a heartbeat.",
+      "role": "Former CEO, Suria Labs",
+      "context": "Co-founder through acquisition"
+    }
+  },
   "Clients": {
     "title": "Who I Work With",
-    "p": "I work best with founders on their second (or third) venture, operators leaving corporate to build something of their own, and small teams who've outgrown their initial architecture. Not a fit: first-time founders who need mentoring on startup basics."
+    "persona1": {
+      "title": "Serial Founders",
+      "desc": "On your second or third venture. You've done this before and know what good looks like."
+    },
+    "persona2": {
+      "title": "Corporate Escapees",
+      "desc": "Left the big company to build something of your own. You know how to operate, now you need to build."
+    },
+    "persona3": {
+      "title": "Scaling Teams",
+      "desc": "Past the MVP stage. Your early architecture is showing cracks and you need someone who's scaled before."
+    },
+    "not_for": "Not a fit?",
+    "not_for_desc": "I don't do agencies, RFPs, or projects where I'm treated as a vendor. I work as a partner or not at all."
   },
   "Contact": {
     "title": "Let's Talk",

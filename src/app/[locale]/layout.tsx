@@ -3,9 +3,16 @@ import {setRequestLocale} from 'next-intl/server';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import { Roboto } from 'next/font/google';
 
 import type { Metadata } from "next";
 import "../globals.css";
+
+const roboto = Roboto({
+  weight: ['100', '300', '400', '500', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 import NavBar from "../../components/navbar";
 import Footer from "../../components/footer";
@@ -51,7 +58,7 @@ export default async function LocaleLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={roboto.className}>
       <body>
         <NextIntlClientProvider messages={messages}>
           <NavBar />

@@ -42,6 +42,9 @@ export default function NavBar() {
             <Link href="#services" onClick={toggleMenu}>{t('services')}</Link>
           </li>
           <li>
+            <Link href="#work" onClick={toggleMenu}>{t('work')}</Link>
+          </li>
+          <li>
             <Link href="#clients" onClick={toggleMenu}>{t('clients')}</Link>
           </li>
           <li>
