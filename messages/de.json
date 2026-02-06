@@ -1,13 +1,13 @@
 {
   "Meta": {
-    "title": "Robert Strobl | Softwareentwicklung mit Business-Fokus",
-    "description": "Produktentwicklung, Tech Audits, digitale Strategien sowie KI- und Datenlösungen – maßgeschneiderte Softwarelösungen für den Erfolg Ihres Unternehmens."
+    "title": "Robert Strobl | Ihr technischer Mitgründer. Auf Abruf.",
+    "description": "Fractional CTO und technischer Partner für erfahrene Gründer, die B2B SaaS aufbauen"
   },
   "Global": {
     "nav": {
       "about": "Über mich",
-      "services": "Leistungen",
-      "clients": "Meine Kunden",
+      "services": "Arbeitsweise",
+      "clients": "Für wen ich arbeite",
       "contact": "Kontakt"
     },
     "footer": {
@@ -16,37 +16,37 @@
     }
   },
   "About": {
-    "title": "Gemeinsam die digitale Zukunft gestalten.",
-    "p1_1": "Mit über 20 Jahren Erfahrung als ",
-    "tech_entrepreneur": "Tech-Unternehmer",
-    "software_engineer": " Softwareentwickler",
-    "digital_strategist": " Digitalstratege",
-    "and": " und",
-    "p1_2": ", helfe ich mit meinem umfassenden Wissen ambitionierten digitalen Unternehmen beim Aufbau und Wachstum.",
-    "p2": "Ich habe über 50 digitale Produkte mit globalen Remote-Teams entwickelt und 8 Jahre lang in Malaysia eine Entwicklungsberatung mit 30 Mitarbeitern geleitet, welche 2023 aquiriert wurde.",
+    "title": "Ihr technischer Mitgründer. Auf Abruf.",
+    "p1_1": "Sie haben bereits Unternehmen aufgebaut. Oder Teams in großem Maßstab geleitet. Jetzt starten Sie etwas Eigenes — und brauchen einen ",
+    "tech_entrepreneur": "technischen Partner",
+    "software_engineer": "",
+    "digital_strategist": "",
+    "and": "",
+    "p1_2": ", der auf Ihrem Niveau arbeitet.",
+    "p2": "Ich helfe erfahrenen Gründern, B2B SaaS-Produkte zu entwickeln, die von Anfang an richtig aufgebaut sind. Kein Händchenhalten. Keine verschwendeten Ressourcen. Nur Senior-Level Umsetzung.",
     "cta": "Kontaktieren"
   },
   "Services": {
-    "title": "Softwareentwicklung mit den Unternehmenszielen im Blick",
-    "p": "Als Software-Ingenieur und Unternehmer verstehe ich, dass technologische Entscheidungen Geschäftsentscheidungen sind. Ich optimiere Entwicklungsprozesse, wähle praktische Tech-Stacks aus und stelle sicher, dass Ihr Entwicklungsteam auf Erfolgskurs ist.",
-    "product_dev_title": "Produktentwicklung",
-    "product_dev_p": "Vom Konzept bis zum Launch begleite ich Sie durch den gesamten Produktlebenszyklus. Ob beim Aufbau von Grund auf oder bei der Verbesserung bestehender Lösungen, ich stelle sicher, dass skalierbare, leistungsstarke und benutzerzentrierte Produkte entstehen.",
-    "tech_audit_title": "Tech Audit",
-    "tech_audit_p1": "Bewerten und optimieren Sie Ihre Software-Entwicklungsprozesse, Code-Qualität und Teamleistung.",
-    "tech_audit_p2": "Ich biete tiefgehende technische Audits und Best-Practice-Empfehlungen zur Verbesserung von Effizienz und Wartbarkeit.",
-    "digital_strategy_title": "Digitale Strategie",
-    "digital_strategy_p1": "Bringen Sie Technologie in Einklang mit den Geschäftszielen durch strukturierte Anforderungen und strategische Planung.",
-    "digital_strategy_p2": "Ich helfe dabei, klare technische Roadmaps zu definieren, um sicherzustellen, dass Ihre digitalen Initiativen gut geplant und erfolgreich umgesetzt werden.",
-    "ai_title": "KI- und Datenlösungen",
-    "ai_p": "Entwickeln und optimieren Sie KI-Modelle, die auf Ihre branchenspezifischen Bedürfnisse zugeschnitten sind. Vom domänenspezifischen maschinellen Lernen bis hin zu Datenstrategie und Implementierung – ich helfe Ihnen, KI zur Automatisierung, Entscheidungsfindung und Innovation zu nutzen."
+    "title": "20+ Jahre Bauen, Liefern und Skalieren",
+    "p": "Ich habe Unternehmen gegründet, Engineering-Teams geleitet und Produkte in verschiedenen Branchen entwickelt. Ich habe in Malaysia eine 30-köpfige Entwicklungsberatung aufgebaut — 2023 akquiriert. Ich verstehe, dass Architekturentscheidungen Geschäftsentscheidungen sind, und dass Geschwindigkeit zählt — aber auch, dass man nicht alles in 18 Monaten neu aufbauen muss.",
+    "product_dev_title": "Produktarchitektur",
+    "product_dev_p": "Sie haben die Idee validiert. Jetzt müssen Sie richtig bauen. Ich entwerfe das technische Fundament — Stack, Infrastruktur, Teamstruktur — damit es mit Ihnen skaliert, nicht gegen Sie.",
+    "tech_audit_title": "Technische Due Diligence",
+    "tech_audit_p1": "Sie planen eine Finanzierungsrunde? Oder eine Akquisition? Ich liefere ehrliche, investorenreife technische Bewertungen.",
+    "tech_audit_p2": "Kein Blabla. Nur was funktioniert, was nicht, und was es braucht, um es zu beheben.",
+    "digital_strategy_title": "Hands-On Entwicklung",
+    "digital_strategy_p1": "Manchmal braucht man einfach jemanden, der bauen kann.",
+    "digital_strategy_p2": "Ich gehe in die Tiefe, wenn nötig — Backend-Systeme, Integrationen, Infrastruktur — besonders in frühen Phasen, wo jede Entscheidung sich potenziert.",
+    "ai_title": "Fractional CTO",
+    "ai_p": "Sie brauchen technische Führung ohne Vollzeit-Anstellung? Ich integriere mich in Ihr Team, gebe die Richtung vor, löse Blockaden für Entwickler und halte das Produkt in Bewegung."
   },
   "Clients": {
-    "title": "Vertrauen führender Marken",
-    "p": "Ich hatte das Privileg, mit einer Vielzahl von Kunden zusammenzuarbeiten – von Startups in der Frühphase bis hin zu etablierten Unternehmen. Hier sind einige der Marken, mit denen ich zusammengearbeitet habe."
+    "title": "Für wen ich arbeite",
+    "p": "Ich arbeite am besten mit Gründern in ihrer zweiten (oder dritten) Unternehmung, Führungskräften, die aus dem Corporate-Bereich kommen und etwas Eigenes aufbauen wollen, und kleinen Teams, die über ihre initiale Architektur hinausgewachsen sind. Nicht passend: Erstgründer, die Mentoring in Startup-Basics brauchen."
   },
   "Contact": {
-    "title": "Ihr Projekt beginnt hier",
-    "p": "Egal, ob Sie ein neues Unternehmen gründen, ein bestehendes Produkt skalieren oder technische Beratung suchen, ich bin hier, um zu helfen. Lassen Sie uns verbinden und besprechen, wie wir zusammenarbeiten können, um Ihre Ziele zu erreichen.",
+    "title": "Lassen Sie uns sprechen",
+    "p": "Ich übernehme nur wenige Engagements gleichzeitig. Wenn Sie etwas Ambitioniertes aufbauen und einen technischen Partner suchen, der das alles schon durchgemacht hat, lassen Sie uns reden.",
     "thanks": "Danke!",
     "thanks_p": "Ihre Nachricht wurde gesendet. Ich melde mich in Kürze bei Ihnen.",
     "name": "Ihr Name",
@@ -54,6 +54,6 @@
     "message": "Ihre Nachricht",
     "send": "Nachricht senden",
     "or": "oder",
-    "book_appointment": "Buchen Sie eine kostenlose Beratung"
+    "book_appointment": "Kostenloses Erstgespräch buchen"
   }
 }

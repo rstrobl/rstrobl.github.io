@@ -1,14 +1,14 @@
 {
   "Meta": {
-    "title": "Robert Strobl | Software Engineering with Business Focus",
-    "description": "Software Engineering with a Business-First Mindset"
+    "title": "Robert Strobl | Your Technical Co-Founder. On Demand.",
+    "description": "Fractional CTO and technical partner for experienced founders building B2B SaaS"
   },
   "Global": {
     "nav": {
       "about": "About",
-      "services": "Services",
+      "services": "How I Work",
       "clients": "Who I Work With",
-      "contact": "Get in Touch"
+      "contact": "Let's Talk"
     },
     "footer": {
       "privacy_policy": "Privacy Policy",
@@ -16,37 +16,37 @@
     }
   },
   "About": {
-    "title": "Building Tech Ventures. From Berlin.",
-    "p1_1": "With over 20 years of experience as a ",
-    "tech_entrepreneur": "tech entrepreneur",
-    "software_engineer": " software engineer",
-    "digital_strategist": " digital strategist",
-    "and": " and",
-    "p1_2": ", I bring a wealth of knowledge and proven insights to help ambitious digital ventures scale, innovate, and succeed.",
-    "p2": "Throughout my career, I've built 50+ digital products with global remote teams. I also founded and led a 30-person development consultancy in Malaysia, which was acquired in 2023.",
-    "cta": "Get in Touch"
+    "title": "Your Technical Co-Founder. On Demand.",
+    "p1_1": "You've built companies before. Or led teams at scale. Now you're starting something of your own — and you need a ",
+    "tech_entrepreneur": "technical partner",
+    "software_engineer": "",
+    "digital_strategist": "",
+    "and": "",
+    "p1_2": " who operates at your level.",
+    "p2": "I help experienced founders build B2B SaaS products that are architected right from day one. No hand-holding. No wasted cycles. Just senior-level execution.",
+    "cta": "Let's Talk"
   },
   "Services": {
-    "title": "Software Engineering with Business Focus",
-    "p": "As a software engineer and entrepreneur, I understand that technology decisions are business decisions. I optimize development processes, select practical tech stacks, and ensure engineering aligns with scalability and growth.",
-    "product_dev_title": "Product Development",
-    "product_dev_p": "From concept to launch, I guide you through the full product lifecycle. Whether building from scratch or enhancing existing solutions, I ensure scalable, high-performing, and user-centric products.",
-    "tech_audit_title": "Tech Audit",
-    "tech_audit_p1": "Assess and optimize your software development processes, code quality, and team performance.",
-    "tech_audit_p2": "I provide in-depth technical audits and best-practice recommendations to enhance efficiency and maintainability.",
-    "digital_strategy_title": "Digital Strategy",
-    "digital_strategy_p1": "Align technology with business goals through structured requirements and strategic planning.",
-    "digital_strategy_p2": "I help define clear technical roadmaps, ensuring your digital initiatives are well-architected and built for success.",
-    "ai_title": "AI & Data Solutions",
-    "ai_p": "Develop and optimize AI models tailored to your industry needs. From domain-specific machine learning solutions to data strategy and implementation, I help you leverage AI to drive automation, decision-making, and innovation."
+    "title": "20+ Years Building, Shipping, and Scaling",
+    "p": "I've founded companies, led engineering teams, and built products across industries. I founded and grew a 30-person development consultancy in Malaysia — acquired in 2023. I understand that architecture decisions are business decisions, and that speed matters — but so does not having to rebuild everything in 18 months.",
+    "product_dev_title": "Product Architecture",
+    "product_dev_p": "You've validated the idea. Now you need to build it properly. I design the technical foundation — stack, infrastructure, team structure — so it scales with you, not against you.",
+    "tech_audit_title": "Technical Due Diligence",
+    "tech_audit_p1": "Raising a round? Acquiring a company? I provide honest, investor-ready technical assessments.",
+    "tech_audit_p2": "No fluff. Just what's working, what's not, and what it'll take to fix.",
+    "digital_strategy_title": "Hands-On Building",
+    "digital_strategy_p1": "Sometimes you just need someone who can build.",
+    "digital_strategy_p2": "I go deep when needed — backend systems, integrations, infrastructure — especially in early stages where every decision compounds.",
+    "ai_title": "Fractional CTO",
+    "ai_p": "Need ongoing technical leadership without a full-time hire? I embed with your team, set direction, unblock engineers, and keep the product moving."
   },
   "Clients": {
-    "title": "Trusted by Leading Brands",
-    "p": "I’ve had the privilege of working with a diverse range of clients, from early-stage startups to established enterprises. Here are a few of the brands I’ve collaborated with."
+    "title": "Who I Work With",
+    "p": "I work best with founders on their second (or third) venture, operators leaving corporate to build something of their own, and small teams who've outgrown their initial architecture. Not a fit: first-time founders who need mentoring on startup basics."
   },
   "Contact": {
-    "title": "Let's Build Something Great Together",
-    "p": "Whether you’re launching a new venture, scaling an existing product, or seeking technical guidance, I’m here to help. Let’s connect and discuss how we can collaborate to achieve your goals.",
+    "title": "Let's Talk",
+    "p": "I take on a handful of engagements at a time. If you're building something ambitious and want a technical partner who's been through it, let's have a conversation.",
     "thanks": "Thank You!",
     "thanks_p": "Your message has been sent. I'll get back to you shortly.",
     "name": "Your Name",
